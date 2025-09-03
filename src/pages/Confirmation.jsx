@@ -21,27 +21,74 @@ export default function Confirmation() {
       transition={{ duration: 0.3, ease: "easeOut" }}
     >
       <PageHeader />
-      <div className="max-w-xl mx-auto text-center">
-      <motion.h1
-        className="text-3xl font-bold mb-4"
-        initial={{ opacity: 0, scale: 0.98 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.25 }}
-      >
-        🎉 Success!
-      </motion.h1>
+      <div className="max-w-xl mx-auto">
+        <motion.div
+          className="rounded-2xl p-8 bg-white dark:bg-[#1E1E1E] border border-gray-200 dark:border-gray-700 shadow-lg"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.25 }}
+        >
+          <motion.div
+            className="flex flex-col items-center text-center"
+            initial="hidden"
+            animate="visible"
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}
+          >
+            <motion.div
+              variants={{ hidden: { opacity: 0, scale: 0.96 }, visible: { opacity: 1, scale: 1 } }}
+              className="w-16 h-16 rounded-full bg-[#22E552]/15 text-[#22E552] flex items-center justify-center mb-4"
+            >
+              <span className="text-2xl">🎉</span>
+            </motion.div>
+            <motion.h1
+              className="text-3xl font-bold mb-2"
+              variants={{ hidden: { opacity: 0, y: 8 }, visible: { opacity: 1, y: 0 } }}
+            >
+              Success!
+            </motion.h1>
+            <motion.p className="text-gray-600 dark:text-gray-300 mb-6" variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}>
+              Your setup is complete. Here are your details:
+            </motion.p>
 
-      <p className="text-lg mb-2">Your number:</p>
-      <p className="text-2xl font-mono text-[#22E552] mb-4">
-        {number || "No number selected"}
-      </p>
+            <motion.div
+              className="w-full text-left space-y-3"
+              variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.06 } } }}
+            >
+              <motion.div
+                className="flex items-center justify-between rounded-xl bg-gray-50 dark:bg-gray-700/60 border border-gray-200 dark:border-gray-700 p-4"
+                variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
+              >
+                <span className="text-sm text-gray-500 dark:text-gray-300">Number</span>
+                <span className="font-mono text-lg text-[#22E552]">{number || "Not selected"}</span>
+              </motion.div>
+              <motion.div
+                className="flex items-center justify-between rounded-xl bg-gray-50 dark:bg-gray-700/60 border border-gray-200 dark:border-gray-700 p-4"
+                variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
+              >
+                <span className="text-sm text-gray-500 dark:text-gray-300">Plan</span>
+                <span className="font-medium">{plan?.name || "N/A"}</span>
+              </motion.div>
+              <motion.div
+                className="flex items-center justify-between rounded-xl bg-gray-50 dark:bg-gray-700/60 border border-gray-200 dark:border-gray-700 p-4"
+                variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
+              >
+                <span className="text-sm text-gray-500 dark:text-gray-300">User</span>
+                <span className="font-medium">{user?.name || "Guest"}</span>
+              </motion.div>
+            </motion.div>
 
-      <p className="mb-2">Plan: <strong>{plan?.name || "N/A"}</strong></p>
-      <p className="mb-6">Welcome, <strong>{user?.name || "Guest"}</strong>!</p>
-
-      <motion.button onClick={handleReset} className="px-6 h-[48px] rounded-[15px] bg-[#22E552] text-[#1E1E1E] font-semibold hover:brightness-95" whileTap={{ scale: 0.98 }}>
-        Back to Home
-      </motion.button>
+            <motion.div className="mt-8" variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}>
+              <motion.button
+                onClick={handleReset}
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="px-6 h-[48px] rounded-[15px] bg-[#22E552] text-[#1E1E1E] font-semibold focus:outline-none focus:ring-2 focus:ring-[#22E552]/70 shadow-[0_8px_24px_-8px_rgba(34,229,82,0.6)]"
+              >
+                Back to Home
+              </motion.button>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
     </motion.div>
   );

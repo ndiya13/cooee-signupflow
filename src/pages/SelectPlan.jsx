@@ -36,15 +36,18 @@ export default function SelectPlan() {
       >
         Choose a plan
       </motion.h1>
-      <div className="grid sm:grid-cols-2 gap-6">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}
+        className="grid sm:grid-cols-2 gap-6"
+      >
         {plans.map((plan) => (
           <motion.div
             key={plan.id}
-            className="border rounded-xl p-6 bg-gray-200 dark:bg-gray-700 border-transparent"
-            whileHover={{ scale: 1.02 }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.25 }}
+            variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }}
+            whileHover={{ y: -4, scale: 1.01 }}
+            className="border rounded-2xl p-6 bg-gray-200 dark:bg-gray-700 border-transparent shadow-md hover:shadow-lg transition-all duration-300 ease-out"
           >
             <h2 className="text-xl font-semibold">{plan.name}</h2>
             <p className="text-2xl font-bold my-2">${plan.price}/mo</p>
@@ -53,15 +56,17 @@ export default function SelectPlan() {
                 <li key={perk}>{perk}</li>
               ))}
             </ul>
-            <button
+            <motion.button
               onClick={() => handleSelect(plan)}
-              className="px-4 py-2 rounded-[15px] bg-[#22E552] text-white hover:brightness-95"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="px-4 py-2 rounded-[15px] bg-[#22E552] text-white hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-[#22E552]/70 shadow-[0_8px_24px_-8px_rgba(34,229,82,0.6)] transition-all"
             >
               Select
-            </button>
+            </motion.button>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
       </div>
     </motion.div>
   );

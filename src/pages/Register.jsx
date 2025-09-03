@@ -55,47 +55,53 @@ export default function Register() {
         Register
       </motion.h1>
       <form onSubmit={handleSubmit} className="space-y-4">
-        <input
+        <motion.input
           type="text"
           name="name"
           placeholder="Full name"
           value={form.name}
           onChange={handleChange}
-          className="w-full border p-3 rounded bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700"
+          className="w-full border p-3 rounded bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#22E552]/70"
+          whileFocus={{ scale: 1.005 }}
           required
         />
-        <input
+        <motion.input
           type="email"
           name="email"
           placeholder="Email"
           value={form.email}
           onChange={handleChange}
-          className="w-full border p-3 rounded bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700"
+          className="w-full border p-3 rounded bg-white dark:bg-gray-800 border-gray-700 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#22E552]/70"
+          whileFocus={{ scale: 1.005 }}
           required
         />
-        <input
+        <motion.input
           type="password"
           name="password"
           placeholder="Password"
           value={form.password}
           onChange={handleChange}
-          className="w-full border p-3 rounded bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700"
+          className="w-full border p-3 rounded bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#22E552]/70"
+          whileFocus={{ scale: 1.005 }}
           required
         />
-        <input
+        <motion.input
           type="text"
           name="address"
           placeholder="Address (optional)"
           value={form.address}
           onChange={handleChange}
-          className="w-full border p-3 rounded bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700"
+          className="w-full border p-3 rounded bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#22E552]/70"
+          whileFocus={{ scale: 1.005 }}
         />
-        <button
+        <motion.button
           type="submit"
-          className="w-full h-[48px] rounded-[15px] bg-[#22E552] text-[#1E1E1E] font-semibold hover:brightness-95"
+          whileHover={{ scale: 1.01 }}
+          whileTap={{ scale: 0.98 }}
+          className="w-full h-[48px] rounded-[15px] bg-[#22E552] text-[#1E1E1E] font-semibold hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-[#22E552]/70 shadow-[0_8px_24px_-8px_rgba(34,229,82,0.6)]"
         >
           Continue to Payment
-        </button>
+        </motion.button>
       </form>
       </div>
     </motion.div>

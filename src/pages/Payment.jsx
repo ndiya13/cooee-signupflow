@@ -48,10 +48,11 @@ export default function Payment() {
         Payment
       </motion.h1>
       <motion.div
-        className="border rounded p-4 mb-6 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700"
+        className="rounded-2xl p-6 mb-6 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 shadow-md hover:shadow-lg transition-all duration-300 ease-out"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.25 }}
+        whileHover={{ y: -2 }}
       >
         <p className="mb-2">Plan: <strong>{plan.name}</strong></p>
         <p className="mb-2">Amount: <strong>${plan.price} / month</strong></p>
@@ -61,7 +62,7 @@ export default function Payment() {
       <motion.button
         onClick={handlePayment}
         disabled={loading}
-        className="w-full h-[48px] rounded-[15px] bg-[#22E552] text-[#1E1E1E] font-semibold hover:brightness-95 disabled:opacity-60"
+        className="w-full h-[48px] rounded-[15px] bg-[#22E552] text-[#1E1E1E] font-semibold hover:brightness-95 disabled:opacity-60 focus:outline-none focus:ring-2 focus:ring-[#22E552]/70 shadow-[0_8px_24px_-8px_rgba(34,229,82,0.6)]"
         whileTap={{ scale: 0.98 }}
         whileHover={{ scale: 1.01 }}
       >
