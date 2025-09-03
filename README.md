@@ -107,7 +107,7 @@ The link is: https://cooee-signupflow.netlify.app/
 ## 🎥 Walkthrough Video
 
 A 5–10 minute Loom walkthrough is available here: 
-https://www.loom.com/share/5c5f24a59663437695198909d83a31bd?sid=a23a81b4-3c48-4010-8a16-3062e30dbfb7
+https://www.loom.com/share/c2d3eb34c0fb4d2fb1350f99aed19dc7?sid=be7dd545-e147-4266-b24f-2ffbca6a901a
 ---
 
 ## 📌 Assumptions Made
