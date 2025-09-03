@@ -99,14 +99,15 @@ src/
 
 ## 🌍 Deployment
 
-This app is deployed on \[Vercel / Netlify / GitHub Pages].
-https://cooee-signupflow.netlify.app/
+This app is deployed on Netlify.
+The link is: https://cooee-signupflow.netlify.app/
 
 ---
 
 ## 🎥 Walkthrough Video
 
-A 5–10 minute Loom walkthrough is available here:https://www.loom.com/share/5c5f24a59663437695198909d83a31bd?sid=a23a81b4-3c48-4010-8a16-3062e30dbfb7
+A 5–10 minute Loom walkthrough is available here: 
+https://www.loom.com/share/5c5f24a59663437695198909d83a31bd?sid=a23a81b4-3c48-4010-8a16-3062e30dbfb7
 ---
 
 ## 📌 Assumptions Made
