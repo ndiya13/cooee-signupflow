@@ -23,7 +23,7 @@ export default function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Basic validation
+    
     if (!form.name.trim() || !form.email.trim() || !form.password.trim()) {
       return;
     }

@@ -22,7 +22,7 @@ export default function Payment() {
     }, 1500);
   };
 
-  // Redirect if no plan is selected
+
   if (!plan) {
     toast.error("No plan selected. Redirecting to plan selection...");
     navigate("/plan");

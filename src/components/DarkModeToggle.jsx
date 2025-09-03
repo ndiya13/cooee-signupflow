@@ -15,7 +15,7 @@ function getInitialDark() {
 }
 
 export default function DarkModeToggle({ className = "" }) {
-  // Initialize synchronously to avoid a flash or incorrect flip
+
   const [dark, setDark] = useState(getInitialDark);
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-// src/pages/SelectNumber.jsx
+
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -26,7 +26,7 @@ export default function SelectNumber() {
     NL: ["+31 20 555 4001", "+31 20 555 4002", "+31 20 555 4003", "+31 20 555 4004", "+31 20 555 4005", "+31 20 555 4006", "+31 20 555 4007", "+31 20 555 4008"],
   };
 
-  // Framer Motion variants for staggered entrances and smooth transitions
+ 
   const staggerContainer = {
     animate: {
       transition: { staggerChildren: 0.06, delayChildren: 0.05 },
@@ -86,7 +86,6 @@ export default function SelectNumber() {
         <h2 className="text-[25px] font-medium mb-6">Choose your country and number:</h2>
         </motion.div>
 
-        {/* Country buttons */}
         <motion.div
           variants={staggerContainer}
           initial="initial"
@@ -124,7 +123,6 @@ export default function SelectNumber() {
             </h1>
           </motion.div>
 
-          {/* Numbers grid with animated country switch and item stagger */}
           <AnimatePresence mode="wait">
             <motion.div
               key={country}
