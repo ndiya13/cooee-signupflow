@@ -113,7 +113,7 @@ https://www.loom.com/share/c2d3eb34c0fb4d2fb1350f99aed19dc7?sid=be7dd545-e147-42
 ## 📌 Assumptions Made
 
 * Mock data used for numbers & plans (no real API).
-* Payment is simulated with `setTimeout`.
+* Payment is simulated with **setTimeout**.
 * User data is not stored persistently (local state only).
 
 ---
